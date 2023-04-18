@@ -1,4 +1,5 @@
-import ".Header.css";
+import SearchIcon from "@mui/icons-material/Search";
+import "./Header.css";
 
 function Header() {
   return (
@@ -9,9 +10,22 @@ function Header() {
       />
       <div className="header__search">
         <input className="header__searchInput" type="text" />
-        {/* Logo */}
+        <SearchIcon className="header__searchIcon" />
       </div>
-      <div className="header__nav"></div>
+      <div className="header__nav">
+        <div className="header_option">
+          <span className="header__optionLineOne">Hello Guest</span>
+          <span className="header__optionLineTwo">Sign In</span>
+        </div>
+        <div className="header_option">
+          <span className="header__optionLineOne">Returns</span>
+          <span className="header__optionLineTwo">& Orders</span>
+        </div>
+        <div>
+          <span className="header__optionLineOne">Your</span>
+          <span className="header__optionLineTwo">Prime</span>
+        </div>
+      </div>
     </div>
   );
 }
