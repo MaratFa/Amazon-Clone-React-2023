@@ -1,12 +1,12 @@
-import './App.css'
+import "./App.css";
+import Header from "./Header.js";
 
 function App() {
   return (
     // Bem
     <div className="App">
-        <h1>Hello! Let's build the Amazon Store</h1>
-        {/* Header */}
-        {/* Home */}
+      <Header />
+      {/* Home */}
     </div>
   );
 }
