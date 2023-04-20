@@ -1,22 +1,23 @@
-import "./Product.css"
+import "./Product.css";
 
-function Product() {
+function Product({ id, title, image, price, rating }) {
   return (
     <div className="product">
       <div className="product__info">
-        <p>HyperX Cloud II</p>
-        <p className="product_price">
+        <p>{title}</p>
+        <p className="product__price">
           <small>$</small>
-          <strong>19.99</strong>
+          <strong>{price}</strong>
         </p>
-        <div className="product_rating">
-          <p>&#11088;</p>
+        <div className="product__rating">
+          {Array(rating)
+            .fill()
+            .map((_, i) => (
+              <p>&#11088;</p>
+            ))}
         </div>
       </div>
-      <img 
-        src='https://m.media-amazon.com/images/I/71M5l+O4OFL._AC_SY355_.jpg'
-        alt=""
-      />
+      <img src={image} alt="" />
       <button>Add to Basket</button>
     </div>
   );
