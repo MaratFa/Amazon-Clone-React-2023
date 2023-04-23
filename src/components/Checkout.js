@@ -1,11 +1,9 @@
 import "./Checkout.css";
-import Header from "./Header.js";
 import Subtotal from "./Subtotal";
 
 const Checkout = () => {
   return (
     <div>
-      <Header />
       <div className="checkout">
         <div className="checkout__left">
           <img
