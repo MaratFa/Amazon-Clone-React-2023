@@ -1,8 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
-import Checkout from "./components/Checkout.js";
-import Header from "./components/Header";
-import Home from "./components/Home.js";
+import Checkout from "./Checkout.js";
+import Header from "./Header";
+import Home from "./Home.js";
 
 function App() {
   return (
