@@ -17,23 +17,6 @@ const Checkout = () => {
           />
           <div>
             <h2 className="checkout__title">Your shopping basket</h2>
-
-            <CheckoutProduct
-              id="335432"
-              title="This is a test"
-              image="https://m.media-amazon.com/images/I/81Y9BnR2+hL._AC_SY606_.jpg"
-              price={133.44}
-              rating={5}
-            />
-
-            <CheckoutProduct
-              id="335432"
-              title="This is a test"
-              image="https://m.media-amazon.com/images/I/81Y9BnR2+hL._AC_SY606_.jpg"
-              price={133.44}
-              rating={5}
-            />
-
             {basket.map(item => (
               <CheckoutProduct
                 id={item.id}
@@ -43,10 +26,6 @@ const Checkout = () => {
                 rating={item.rating}
               />
             ))}
-            {/* CheckoutProduct */}
-            {/* CheckoutProduct */}
-            {/* CheckoutProduct */}
-            {/* CheckoutProduct */}
           </div>
         </div>
         <div className="checkout__right">
