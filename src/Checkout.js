@@ -1,5 +1,6 @@
 import "./Checkout.css";
 import CheckoutProduct from "./CheckoutProduct";
+import Header from "./Header";
 import { useStateValue } from "./StateProvider";
 import Subtotal from "./Subtotal";
 
@@ -8,6 +9,7 @@ const Checkout = () => {
 
   return (
     <div>
+      <Header />
       <div className="checkout">
         <div className="checkout__left">
           <img
