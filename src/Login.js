@@ -1,26 +1,35 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
 
-const Login = () => {
-  const history = useNavigate();
+
+
+export default function Login () {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signIn = e => {
     e.preventDefault();
-  };
+
+    signInWithEmailAndPassword(auth, email, password).then(auth => {
+      navigate('/')
+  })
+  .catch(error => alert(error.message));
+}
+debugger
 
   const register = e => {
     e.preventDefault();
-    auth
-      .createUserWithEmailAndPassword(auth, email, password)
+    
+    createUserWithEmailAndPassword(auth,email, password)
       .then(auth => {
         // It successfully created a new user with email and password
         console.log(auth);
         if (auth) {
-          history.push("/");
+          navigate('/')
         }
       })
       .catch(error => alert(error.message));
@@ -71,6 +80,4 @@ const Login = () => {
       </div>
     </div>
   );
-};
-
-export default Login;
+}
