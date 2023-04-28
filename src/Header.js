@@ -5,7 +5,10 @@ import "./Header.css";
 import { useStateValue } from "./StateProvider";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {};
+
   return (
     <div className="header">
       <Link to="/">
@@ -20,9 +23,11 @@ function Header() {
       </div>
       <div className="header__nav">
         <Link to="/login">
-          <div className="header_option">
+          <div onClick={handleAuthentication} className="header_option">
             <span className="header__optionLineOne">Hello Guest</span>
-            <span className="header__optionLineTwo">Sign In</span>
+            <span className="header__optionLineTwo">
+              {user ? "Sign Out" : "Sign In"} Sign In
+            </span>
           </div>
         </Link>
         <div className="header_option">
