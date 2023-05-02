@@ -5,13 +5,14 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CurrencyFormat from "react-currency-format";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CheckoutProduct from "./CheckoutProduct";
 import Header from "./Header";
 import "./Payment.css";
 import { useStateValue } from "./StateProvider";
+import axios from "./axios";
 import { getBasketTotal } from "./reducer";
 
 export const promise = loadStripe(
@@ -20,6 +21,7 @@ export const promise = loadStripe(
 
 const PaymentInside = () => {
   const [{ basket, user }, dispatch] = useStateValue();
+  const navigate = useNavigate();
 
   const stripe = useStripe();
   const elements = useElements();
@@ -57,6 +59,12 @@ const PaymentInside = () => {
       })
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
+
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+
+        navigate("/orders");
       });
   };
 
