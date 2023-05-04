@@ -14,12 +14,11 @@ import "./Payment.css";
 import { useStateValue } from "./StateProvider";
 import axios from "./axios";
 import { getBasketTotal } from "./reducer";
-
 export const promise = loadStripe(
   "pk_test_51N2gdpGDWV8jlCoqufZkopiAonRPGEhqhuxcrOUuSzJMP3v5U4a2GnV8IixwnmLAdozqWpXYnBFVxXQDDHs8W96G00kI4bhlou"
 );
 
-const PaymentInside = () => {
+function PaymentInside() {
   const [{ basket, user }, dispatch] = useStateValue();
   const navigate = useNavigate();
 
@@ -36,7 +35,7 @@ const PaymentInside = () => {
     // Generate the special stripe secret which allows us to charge a customer
     const getClientSecret = async () => {
       const response = await axios({
-        method: `post`,
+        method: "post",
         // Stripe expects the total in a currencies subunits
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       });
@@ -47,7 +46,6 @@ const PaymentInside = () => {
   }, [basket]);
 
   console.log("THE SECRET IS >>>", clientSecret);
-  debugger;
 
   const handleSubmit = async event => {
     // Do all the fancy stripe stuff...
@@ -67,6 +65,10 @@ const PaymentInside = () => {
         setError(null);
         setProcessing(false);
 
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
+
         navigate("/orders");
       });
   };
@@ -76,7 +78,6 @@ const PaymentInside = () => {
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };
-
   return (
     <div className="payment">
       <div className="payment__container">
@@ -135,23 +136,23 @@ const PaymentInside = () => {
               </div>
 
               {/* Errors */}
-              {error & <div>{error}</div>}
+              {error && <div>{error}</div>}
             </form>
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 const Payment = () => {
   return (
-    <>
+    <div>
       <Header />
       <Elements stripe={promise}>
         <PaymentInside />
       </Elements>
-    </>
+    </div>
   );
 };
 
