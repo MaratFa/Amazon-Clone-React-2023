@@ -1,6 +1,6 @@
-import Header from "./Header"
-import "./Home.css"
-import Product from "./Product.js"
+import Header from "./Header";
+import "./Home.css";
+import Product from "./Product.js";
 
 function Home() {
   return (
@@ -19,12 +19,13 @@ function Home() {
               title={
                 "SteelSeries Arctis 5 - RGB Illuminated Gaming Headset with DTS Headphone: X v2.0 Surround - for PC and PlayStation 4 - Black"
               }
-              price={70.99}
+              price={61.99}
               image={
                 "https://m.media-amazon.com/images/I/81Y9BnR2+hL._AC_SY606_.jpg"
               }
               rating={5}
             />
+
             <Product
               id={"2"}
               title={
