@@ -5,6 +5,7 @@ import "./App.css";
 import Checkout from "./Checkout.js";
 import Home from "./Home.js";
 import Login from "./Login";
+import Orders from "./Orders.js";
 import Payment from "./Payment";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
@@ -37,6 +38,7 @@ function App() {
     <Router>
       <div className="app">
         <Routes>
+          <Route path="/orders" element={<Orders />} />
           <Route path="/login" element={<Login />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/payment" element={<Payment />} />
