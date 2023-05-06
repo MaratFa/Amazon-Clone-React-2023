@@ -14,7 +14,7 @@ function App() {
   const [{}, dispatch] = useStateValue();
 
   useEffect(() => {
-    // Will only run when the app component loads....
+    // Will only run when the app component loads...
     onAuthStateChanged(auth, authUser => {
       console.log("THE USER IS >>> ", authUser);
       if (authUser) {
