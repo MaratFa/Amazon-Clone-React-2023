@@ -13,6 +13,7 @@ import Header from "./Header";
 import "./Payment.css";
 import { useStateValue } from "./StateProvider";
 import axios from "./axios";
+import { db } from "./firebase";
 import { getBasketTotal } from "./reducer";
 export const promise = loadStripe(
   "pk_test_51N2gdpGDWV8jlCoqufZkopiAonRPGEhqhuxcrOUuSzJMP3v5U4a2GnV8IixwnmLAdozqWpXYnBFVxXQDDHs8W96G00kI4bhlou"
@@ -60,6 +61,16 @@ function PaymentInside() {
       })
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
+
+        db.collection("users")
+          .doc(user?.id)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
 
         setSucceeded(true);
         setError(null);
