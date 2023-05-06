@@ -33,7 +33,7 @@ function PaymentInside() {
   const [clientSecret, setClientSecret] = useState(true);
 
   useEffect(() => {
-    // Generate the special stripe secret which allows us to charge a customer
+    // Generate the special stripe secret which allows us to charge a customer /
     const getClientSecret = async () => {
       const response = await axios({
         method: "post",
