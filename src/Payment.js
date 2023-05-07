@@ -5,6 +5,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import { doc, setDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import CurrencyFormat from "react-currency-format";
 import { Link, useNavigate } from "react-router-dom";
@@ -47,6 +48,7 @@ function PaymentInside() {
   }, [basket]);
 
   console.log("THE SECRET IS >>>", clientSecret);
+  console.log("person", user);
 
   const handleSubmit = async event => {
     // Do all the fancy stripe stuff...
@@ -62,15 +64,11 @@ function PaymentInside() {
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
 
-        db.collection("users")
-          .doc(user?.id)
-          .collection("orders")
-          .doc(paymentIntent.id)
-          .set({
-            basket: basket,
-            amount: paymentIntent.amount,
-            created: paymentIntent.created,
-          });
+        setDoc(doc(db, "users", "orders", user?.uid, paymentIntent.id), {
+          basket: basket,
+          amount: paymentIntent.amount,
+          created: paymentIntent.created,
+        });
 
         setSucceeded(true);
         setError(null);
