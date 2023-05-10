@@ -1,0 +1,105 @@
+[debug] [2023-05-10T18:00:17.714Z] ----------------------------------------------------------------------
+[debug] [2023-05-10T18:00:17.716Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2023-05-10T18:00:17.717Z] CLI Version:   11.27.0
+[debug] [2023-05-10T18:00:17.717Z] Platform:      linux
+[debug] [2023-05-10T18:00:17.717Z] Node Version:  v18.15.0
+[debug] [2023-05-10T18:00:17.717Z] Time:          Wed May 10 2023 21:00:17 GMT+0300 (Moscow Standard Time)
+[debug] [2023-05-10T18:00:17.718Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-10T18:00:17.826Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-10T18:00:17.826Z] > authorizing via signed-in user (marat.fakhrutdinov@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2023-05-10T18:00:17.833Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-05-10T18:00:17.833Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-05-10T18:00:17.833Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-05-10T18:00:17.844Z] [hub] writing locator at /tmp/hub-chalenge-d57e1.json
+[debug] [2023-05-10T18:00:17.862Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-05-10T18:00:17.862Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-05-10T18:00:17.862Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[debug] [2023-05-10T18:00:17.869Z] defaultcredentials: writing to file /home/marat/.config/firebase/marat_fakhrutdinov_gmail.com_application_default_credentials.json
+[debug] [2023-05-10T18:00:17.872Z] Setting GAC to /home/marat/.config/firebase/marat_fakhrutdinov_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/marat/.config/firebase/marat_fakhrutdinov_gmail.com_application_default_credentials.json"}}
+[debug] [2023-05-10T18:00:17.875Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chalenge-d57e1/adminSdkConfig [none]
+[debug] [2023-05-10T18:00:18.427Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chalenge-d57e1/adminSdkConfig 200
+[debug] [2023-05-10T18:00:18.428Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chalenge-d57e1/adminSdkConfig {"projectId":"chalenge-d57e1","databaseURL":"https://chalenge-d57e1-default-rtdb.firebaseio.com","storageBucket":"chalenge-d57e1.appspot.com"}
+[debug] [2023-05-10T18:00:18.465Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/chalenge-d57e1/sites 
+[debug] [2023-05-10T18:00:19.702Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/chalenge-d57e1/sites 200
+[debug] [2023-05-10T18:00:19.702Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/chalenge-d57e1/sites {"sites":[{"name":"projects/chalenge-d57e1/sites/chalenge-d57e1","defaultUrl":"https://chalenge-d57e1.web.app","appId":"1:559093158694:web:45a1c603e17f28019ca7e7","type":"DEFAULT_SITE"}]}
+[debug] [2023-05-10T18:00:19.703Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chalenge-d57e1/webApps/1:559093158694:web:45a1c603e17f28019ca7e7/config [none]
+[debug] [2023-05-10T18:00:20.805Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chalenge-d57e1/webApps/1:559093158694:web:45a1c603e17f28019ca7e7/config 200
+[debug] [2023-05-10T18:00:20.806Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chalenge-d57e1/webApps/1:559093158694:web:45a1c603e17f28019ca7e7/config {"projectId":"chalenge-d57e1","appId":"1:559093158694:web:45a1c603e17f28019ca7e7","databaseURL":"https://chalenge-d57e1-default-rtdb.firebaseio.com","storageBucket":"chalenge-d57e1.appspot.com","apiKey":"AIzaSyCFyZNW98fh6cODARz8eqAGa-iP5J8ib4o","authDomain":"chalenge-d57e1.firebaseapp.com","messagingSenderId":"559093158694","measurementId":"G-FGM65E2W4W"}
+[debug] [2023-05-10T18:00:20.818Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chalenge-d57e1 [none]
+[debug] [2023-05-10T18:00:21.211Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chalenge-d57e1 200
+[debug] [2023-05-10T18:00:21.211Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chalenge-d57e1 {"projectId":"chalenge-d57e1","projectNumber":"559093158694","displayName":"Amazon-chalenge","name":"projects/chalenge-d57e1","resources":{"hostingSite":"chalenge-d57e1","realtimeDatabaseInstance":"chalenge-d57e1-default-rtdb"},"state":"ACTIVE","etag":"1_14f4963f-afb6-4b21-9ee9-0baed4bb913e"}
+[info] i  hosting[chalenge-d57e1]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting[chalenge-d57e1]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2023-05-10T18:00:21.244Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-05-10T18:00:21.244Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-05-10T18:00:21.244Z] Starting Emulator UI with command {"binary":"node","args":["/home/marat/.cache/firebase/emulators/ui-v1.11.5/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/marat/.cache/firebase/emulators/ui-v1.11.5/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-05-10T18:00:21.385Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-05-10T18:00:21.385Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/home/marat/Amazon-Clone-React-2023/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/marat/Amazon-Clone-React-2023/functions\" for Cloud Functions..."}}
+[debug] [2023-05-10T18:00:21.526Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2023-05-10T18:00:22.453Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "stripe": "^12.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-05-10T18:00:22.453Z] Building nodejs source
+[debug] [2023-05-10T18:00:22.454Z] Failed to find version of module node: reached end of search path /home/marat/Amazon-Clone-React-2023/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "16" doesn't match your global version "18". Using node@18 from host. 
+[debug] [2023-05-10T18:00:22.458Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-05-10T18:00:22.463Z] Found firebase-functions binary at '/home/marat/Amazon-Clone-React-2023/functions/node_modules/.bin/firebase-functions'
+[debug] [2023-05-10T18:00:22.658Z] Serving at port 8895
+
+[debug] [2023-05-10T18:00:22.918Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-05-10T18:00:22.926Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[info] ✔  functions[us-central1-api]: http function initialized (http://127.0.0.1:5001/chalenge-d57e1/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/chalenge-d57e1/us-central1/api)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ 127.0.0.1:5000 │ n/a                             │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
