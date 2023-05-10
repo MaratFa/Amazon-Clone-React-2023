@@ -28,13 +28,15 @@ function Orders() {
   }, [user]);
   debugger;
   return (
-    <div className="orders">
+    <div>
       <Header />
-      <h1>Your Orders</h1>
-      <div className="orders__order">
-        {orders?.map(order => (
-          <Order order={order} />
-        ))}
+      <div className="orders">
+        <h1>Your Orders</h1>
+        <div className="orders__order">
+          {orders?.map(order => (
+            <Order order={order} />
+          ))}
+        </div>
       </div>
     </div>
   );
